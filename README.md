@@ -23,8 +23,10 @@ Uninstall Process
 ------------------
 
 The install.sh script can be used to remove the created symlinks again:
+
 ```bash
 cd ~/.dotfiles
 ./install.sh -uninstall
 ```
+
 The script tells you how to uninstall the repository folder afterwards.

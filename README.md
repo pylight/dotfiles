@@ -4,13 +4,13 @@ This repository contains configfiles for my Archlinux systems. Feel free to use 
 
 Installation
 -------------
-
 The install.sh script will create symlinks in your Homedirectory for the following tools:
 
 * tmux (~/.tmux.conf)
 * conky (~/.conkyrc)
+* urxvt (~/.Xdefaults)
 
-Make sure these files aren't availiable yet, otherwise they will be skipped.
+Make sure these files aren't availiable yet, otherwise they will be skipped with a warning.
 
 ```bash
 git clone git://github.com/pylight/dotfiles.git ~/.dotfiles

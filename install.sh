@@ -19,6 +19,7 @@ then
    # create symlinks
    createSym tmux tmux.conf
    createSym conky conkyrc
+   createSym urxvt Xdefaults
 else
    echo "Please read the README.md before you run this!"
    echo "Run ./install.sh -doinstall to create symlinks"

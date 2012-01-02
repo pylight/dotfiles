@@ -1,0 +1,98 @@
+!-----------------------
+! Info
+!------------------------
+! @desc: A simple config for urxvt.
+!
+! @dep:  - urxvt (in Archlinux: extra/rxvt-unicode)
+!        - aur/urxvt-fullscreen for F11 fullscreen support
+!        - aur/urxvt-tabbedex fieldor tabs with names
+!        - copy/paste support (Ctrl+Shift+C and Ctrl+Shift+V): 
+!            * install extra/xsel and then download the perlscript with:
+!               wget https://github.com/muennich/urxvt-perls/raw/master/clipboard -O /usr/lib/urxvt/perl/clipboard 
+! 
+! @author: pylight - for support visit http://github.com/pylight
+
+
+!------------------------
+! basic urxvt config
+!------------------------
+URxvt.saveLines: 1000
+URxvt.scrollBar: false
+URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt*geometry: 100x33
+! optional icon
+URxvt*iconFile: /usr/share/icons/gnome/48x48/apps/utilities-terminal.png
+urxvt*cursorBlink: true
+urxvt*cursorUnderline: true
+
+!------------------------
+! solarized colors 
+!------------------------
+!! Source http://github.com/altercation/solarized
+
+*background: #002b36
+*foreground: #ffffff
+
+!! 657b83
+
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+!! black dark/light
+*color0: #073642
+*color8: #002b36
+!! red dark/light
+*color1: #dc322f
+*color9: #cb4b16
+!! green dark/light
+*color2: #859900
+*color10: #586e75
+!! yellow dark/light
+*color3: #b58900
+*color11: #657b83
+!! blue dark/light
+*color4: #268bd2
+*color12: #839496
+!! magenta dark/light
+*color5: #d33682
+*color13: #6c71c4
+!! cyan dark/light
+*color6: #2aa198
+*color14: #93a1a1
+!! white dark/light
+*color7: #eee8d5
+*color15: #fdf6e3
+
+!------------------------------------------------
+! perl scripts (must be in /usr/lib/urxvt/perl)
+!------------------------------------------------
+
+URxvt.perl-ext-common: default,matcher,fullscreen,tabbedex
+
+! clickable urls config
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+
+! appearance of tabs
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+
+!------------------------
+! Shortcuts
+!------------------------
+
+! (urxvt-fullscreen must be installed and in perl-ext-common-field above)
+urxvt*keysym.F11: perl:fullscreen:switch  
+
+! use usual copy and paste
+!URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+
+URxvt*color14:     #50FCF8
+URxvt*color15:     #F8FCF8
+URxvt*tintColor:        white

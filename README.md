@@ -10,9 +10,8 @@ The install.sh Script will create symlinks in your Homedirectory for the followi
 * conky (~/.conkyrc)
 Make sure these files aren't availiable yet, otherwise they will be skipped.
 
-
 ```bash
-git clone https://github.com/pylight/dotfiles.git ~/.dotfiles
+git clone git://github.com/pylight/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 chmod +x install.sh
 ./install.sh -doinstall

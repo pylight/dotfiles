@@ -5,8 +5,9 @@ This repository contains configfiles for my Archlinux systems. Feel free to use 
 Installation
 -------------
 
-   git clone https://github.com/pylight/dotfiles.git ~/.dotfiles
-   cd ~/.dotfiles
-   chmod +x install.sh
-
+```bash
+git clone https://github.com/pylight/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+chmod +x install.sh
+```
 

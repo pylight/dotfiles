@@ -1,0 +1,75 @@
+alignment tr
+double_buffer yes
+gap_x 50
+gap_y 0
+background yes
+own_window yes
+own_window_transparent yes
+own_window_hints sticky,undecorated,below,skip_taskbar
+
+use_xft yes
+xftfont Sans:size=9
+
+TEXT
+
+
+
+
+${font size=11:italic}${color slate grey}CPU Usage $hr${color }${font }
+CPU1 ${alignr}${cpu cpu1}%
+${cpugraph cpu1 16, 200}
+CPU2 ${alignr}${cpu cpu2}%
+${cpugraph cpu2 16, 200}
+CPU-Temp.${alignr}${hwmon temp 1}°C
+
+${font size=11:italic}${color slate grey}Ram Usage $hr${color }${font }
+RAM ${alignr}$mem/$memmax
+${membar 6, 200}
+Swap ${alignr}$swap/$swapmax
+${swapbar 6, 200}
+
+${font size=11:italic}${color slate grey}Filesystem $hr${color }${font }
+/ ${alignr}${fs_free /}
+${fs_bar 6, 200 /}
+/home ${alignr}${fs_free /home}
+${fs_bar 6, 200 /home}
+
+
+${font size=11:italic}${color slate grey}HDD I/O$hr${color }${font }
+${diskiograph 16,0 F57900 FCAF3E}
+
+
+${font size=11:italic}${color slate grey}Top CPU Tasks $hr${color }${font }
+${color #ddaa00}${top name 1}${alignr}${top cpu 1}%${color }
+${top name 2}${alignr}${top cpu 2}%
+${top name 3}${alignr}${top cpu 3}%
+${top name 4}${alignr}${top cpu 4}%
+${top name 5}${alignr}${top cpu 5}%
+
+
+${font size=11:italic}${color slate grey}Top RAM Tasks  $hr${color }${font }
+${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}%${color }
+${top_mem name 2}${alignr}${top_mem mem 2}%
+${top_mem name 3}${alignr}${top_mem mem 3}%
+${top_mem name 4}${alignr}${top_mem mem 4}%
+${top_mem name 5}${alignr}${top_mem mem 5}%
+
+
+${font size=11:italic}${color slate grey}Infos $hr${color }${font }
+Kernel: ${alignr}$kernel ($machine)
+Uptime: ${alignr}$uptime
+User: ${alignr}$alignc${exec whoami} @ $nodename
+Dateisystem: $alignr${fs_type}
+
+
+${font size=11:italic}${color slate grey}Network $hr${color }${font }
+IP (Lan): $alignr${addr eth0}
+IP (extern): $alignr${execi 600 wget http://checkip.dyndns.org/ -q -O - | grep -Eo '\<[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}\>'}
+Total Down $alignr${totaldown eth0}
+Total Up   $alignr${totalup eth0}
+
+Download ${alignr}${downspeed eth0}
+${downspeedgraph eth0}
+Upload ${alignr}${upspeed eth0}
+${upspeedgraph eth0}
+

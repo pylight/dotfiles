@@ -1,6 +1,6 @@
 dotfiles 
 ========
-This repository contains configfiles for my Archlinux systems. Feel free to use or change them to suit your needs.
+This repository contains configfiles for my Archlinux systems. Feel free to use or change them to suit to your needs.
 
 Installation
 -------------
@@ -19,3 +19,12 @@ chmod +x install.sh
 ./install.sh -doinstall
 ```
 
+Uninstall Process
+------------------
+
+The install.sh script can be used to remove the created symlinks again:
+```bash
+cd ~/.dotfiles
+./install.sh -uninstall
+```
+The script tells you how to uninstall the repository folder afterwards.

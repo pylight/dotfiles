@@ -5,9 +5,11 @@ This repository contains configfiles for my Archlinux systems. Feel free to use 
 Installation
 -------------
 
-The install.sh Script will create symlinks in your Homedirectory for the following tools:
+The install.sh script will create symlinks in your Homedirectory for the following tools:
+
 * tmux (~/.tmux.conf)
 * conky (~/.conkyrc)
+
 Make sure these files aren't availiable yet, otherwise they will be skipped.
 
 ```bash

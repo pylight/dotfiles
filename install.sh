@@ -42,7 +42,8 @@ then
    createSym tmux tmux.conf
    createSym conky conkyrc
    createSym urxvt Xdefaults
-   
+   createSym abcde abcde.conf
+
    # vim (optional)
    echo ""
    read -p "Also checkout vim config (submodule: https://github.com/pylight/vimrc)? [y/N] " prompt

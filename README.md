@@ -10,18 +10,19 @@ Installation
 -------------
 The install.sh script will create symlinks in your Homedirectory for the following tools:
 
-* tmux (~/.tmux.conf)
-* conky (~/.conkyrc)
-* urxvt (~/.Xdefaults)
-* optional: vim (~/.vimrc and ~/.vim) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
-* optional: zsh (creates ~/.zshrc and ~/.oh-my-zsh symlink to the submodules folder)
+* [tmux](http://tmux.sourceforge.net/) (~/.tmux.conf)
+* [conky](http://conky.sourceforge.net/) (~/.conkyrc)
+* [urxvt](https://wiki.archlinux.de/title/Urxvt) (~/.Xdefaults)
+* [abcde](http://andrews-corner.org/abcde.html) (~/.abcde.conf)
+* optional: [vim](http://www.vim.org/) (~/.vimrc and ~/.vim) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
+* optional: [zsh](http://www.zsh.org/) (creates ~/.zshrc and ~/.oh-my-zsh symlink to the submodules folder)
 
 Make sure these files aren't availiable yet, otherwise they will be skipped with a warning. If you don't need a config, just comment out the respective createSym-statement in install.sh. You might also take a short look at the config files to find out more about dependencies and shortcuts. 
 
 ```bash
 git clone git://github.com/pylight/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install.sh -doinstall
+./install.sh --doinstall
 ```
 
 Uninstall Process
@@ -31,7 +32,7 @@ The install.sh script can be used to remove the created symlinks again:
 
 ```bash
 cd ~/.dotfiles
-./install.sh -uninstall
+./install.sh --uninstall
 ```
 
 The script tells you how to uninstall the repository folder afterwards.

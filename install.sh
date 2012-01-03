@@ -44,14 +44,24 @@ then
    read -p "Also setup vim config (https://github.com/pylight/vimrc)? [y/N] " prompt
    if [[ $prompt =~ [yY](es)* ]]
    then
-      git submodule update --init
+      git submodule update --init vim  # checkout vim config
       createSym vim vim
       cd $HOME/.vim
-      git submodule update --init
+      git submodule update --init      # checkout vim plugins
       ./install-vimrc.sh
       cd $curDir
       echo $HOME/.vimrc >> .createdLinks
    fi
+   
+   # zshrc & oh-my-zsh (optional)
+   read -p "Use custom .zshrc (and checkout oh-my-zsh)? [y/N] " prompt2
+   if [[ $prompt2 =~ [yY](es)* ]]
+   then
+      createSym zsh zshrc
+      git submodule update --init oh-my-zsh
+      createSym oh-my-zsh oh-my-zsh
+   fi
+
 
 elif [ "$1" == "-uninstall" ] || [ "$1" == "--uninstall" ]
 then

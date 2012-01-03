@@ -13,8 +13,6 @@ xftfont Sans:size=9
 TEXT
 
 
-
-
 ${font size=11:italic}${color slate grey}CPU Usage $hr${color }${font }
 CPU1 ${alignr}${cpu cpu1}%
 ${cpugraph cpu1 16, 200}
@@ -59,7 +57,7 @@ ${font size=11:italic}${color slate grey}Infos $hr${color }${font }
 Kernel: ${alignr}$kernel ($machine)
 Uptime: ${alignr}$uptime
 User: ${alignr}$alignc${exec whoami} @ $nodename
-Dateisystem: $alignr${fs_type}
+/home fs: $alignr${fs_type /home}
 
 
 ${font size=11:italic}${color slate grey}Network $hr${color }${font }

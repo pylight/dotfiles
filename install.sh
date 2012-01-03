@@ -33,7 +33,7 @@ deleteSyms()
 
 echo "== dotfiles install script =="
 
-if [ "$1" == "-doinstall" ]
+if [ "$1" == "-doinstall" ] || [ "$1" == "--doinstall" ]
 then
    # create symlinks
    createSym tmux tmux.conf
@@ -53,7 +53,7 @@ then
       echo $HOME/.vimrc >> .createdLinks
    fi
 
-elif [ "$1" == "-uninstall" ]
+elif [ "$1" == "-uninstall" ] || [ "$1" == "--uninstall" ]
 then
    echo "Removing symlinks..."
    deleteSyms

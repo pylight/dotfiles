@@ -2,6 +2,10 @@ dotfiles
 ========
 This repository contains configfiles for my Archlinux systems. Feel free to use or change them to suit to your needs.
 
+Screenshots:
+* [urxvt and vim](http://i.imgur.com/YbTyK.jpg)
+* [conky](http://i.imgur.com/9ECzo.jpg)
+
 Installation
 -------------
 The install.sh script will create symlinks in your Homedirectory for the following tools:

@@ -17,35 +17,19 @@ createSym()
 
 deleteSyms()
 {
-   lines=0
-   actions=0
-
    cat .createdLinks | while read LINE
    do
       echo "=> Removing $LINE"
       rm $LINE
-      if [ $? -eq 0 ]; then   # rm successfull?
-         let actions++
-      fi
-      let line++
    done
 
-   # rm infofile if all 
-   # symlinks are removed
-   if [ "$lines" -eq "$actions" ]
-   then
-      rm .createdLinks
-      echo ""
-      echo "Done. To remove the whole folder, run:"
-      echo "cd ; rm -R $curDir"
-      echo ""
-   else
-      echo ""
-      echo "Error while trying to delete symlinks!"
-      echo "Please check your home directory and the .createdLinks-File manually."
-      echo ""
-   fi
+   rm .createdLinks
+   echo ""
+   echo "Done. To remove the whole folder, run:"
+   echo "cd ; rm -R $curDir"
+   echo ""
 }
+
 
 echo "== dotfiles install script =="
 
@@ -55,6 +39,19 @@ then
    createSym tmux tmux.conf
    createSym conky conkyrc
    createSym urxvt Xdefaults
+   
+   # vim (optional)
+   read -p "Also setup vim config (https://github.com/pylight/vimrc)? [y/N] " prompt
+   if [[ $prompt =~ [yY](es)* ]]
+   then
+      git submodule update --init
+      createSym vim vim
+      cd $HOME.vim
+      git submodule update --init
+      ./install-vimrc.sh
+      cd $curDir
+      echo $HOME.vimrc >> .createdLinks
+   fi
 
 elif [ "$1" == "-uninstall" ]
 then

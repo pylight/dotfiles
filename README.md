@@ -9,12 +9,14 @@ The install.sh script will create symlinks in your Homedirectory for the followi
 * tmux (~/.tmux.conf)
 * conky (~/.conkyrc)
 * urxvt (~/.Xdefaults)
+* vim (~/.vimrc) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
 
 Make sure these files aren't availiable yet, otherwise they will be skipped with a warning.
 
 ```bash
 git clone git://github.com/pylight/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
+git submodule update --init
 chmod +x install.sh
 ./install.sh -doinstall
 ```

@@ -4,7 +4,7 @@ This repository contains configfiles for my Archlinux systems. Feel free to use 
 
 **Screenshot:**
 
-* [urxvt and vim + conky on the right]h(ttp://i.imgur.com/HQFxL.jpg)
+* [urxvt and vim + conky on the right](http://i.imgur.com/HQFxL.jpg)
 
 Installation
 -------------

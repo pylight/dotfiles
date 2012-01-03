@@ -8,10 +8,10 @@ createSym()
    file=$2
 
    echo "=> Creating symlink for $tool at ~/.$file"
-   ln -s $curDir/$file $HOME.$file
+   ln -s $curDir/$file $HOME/.$file
    
    if [ $? -eq 0 ]; then
-      echo $HOME.$file >> .createdLinks   # remember linked files
+      echo $HOME/.$file >> .createdLinks   # remember linked files
    fi
 }
 
@@ -46,11 +46,11 @@ then
    then
       git submodule update --init
       createSym vim vim
-      cd $HOME.vim
+      cd $HOME/.vim
       git submodule update --init
       ./install-vimrc.sh
       cd $curDir
-      echo $HOME.vimrc >> .createdLinks
+      echo $HOME/.vimrc >> .createdLinks
    fi
 
 elif [ "$1" == "-uninstall" ]

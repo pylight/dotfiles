@@ -13,7 +13,7 @@ The install.sh script will create symlinks in your Homedirectory for the followi
 * tmux (~/.tmux.conf)
 * conky (~/.conkyrc)
 * urxvt (~/.Xdefaults)
-* optional: vim (~/.vimrc) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
+* optional: vim (~/.vimrc and ~/.vim) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
 
 Make sure these files aren't availiable yet, otherwise they will be skipped with a warning. If you don't need a config, just comment out the respective createSym-statement in install.sh. You might also take a short look at the config files to find out more about dependencies and shortcuts. 
 

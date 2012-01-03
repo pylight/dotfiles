@@ -57,6 +57,7 @@ elif [ "$1" == "-uninstall" ] || [ "$1" == "--uninstall" ]
 then
    echo "Removing symlinks..."
    deleteSyms
+   rm -Rf $curDir/vim
 else
    echo "Please read the README.md before you run this!"
    echo "Run ./install.sh -doinstall to create symlinks"

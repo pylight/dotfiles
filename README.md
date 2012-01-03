@@ -2,10 +2,9 @@ dotfiles
 ========
 This repository contains configfiles for my Archlinux systems. Feel free to use or change them to suit to your needs.
 
-**Screenshots:**
+**Screenshot:**
 
-* [urxvt and vim](http://i.imgur.com/YbTyK.jpg)
-* [conky](http://i.imgur.com/9ECzo.jpg)
+* [urxvt and vim + conky on the right]h(ttp://i.imgur.com/HQFxL.jpg)
 
 Installation
 -------------

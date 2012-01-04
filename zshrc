@@ -56,6 +56,10 @@ alias die="kill -9"
 alias addgsn="ssh-add ~/.ssh/ident/me-server@ganz-sicher.net"
 alias addgit="ssh-add ~/.ssh/ident/git@github.com"
 alias gcam="git commit -am" # for other git aliases, see git plugin
+alias webserver="sudo /etc/rc.d/httpd start"
+# edit configs
+alias vimc="vim $HOME/.vimrc"
+alias zshc="vim $HOME/.zshrc"
 
 # set vim as default editor
 export EDITOR="/usr/bin/vim"

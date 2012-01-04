@@ -36,3 +36,9 @@ cd ~/.dotfiles
 ```
 
 The script tells you how to uninstall the repository folder afterwards.
+
+
+Feedback
+---------
+
+Suggestions/improvements are always [welcome](https://github.com/pylight/dotfiles/issues)!

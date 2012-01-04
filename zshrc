@@ -46,7 +46,7 @@ alias svim="sudo vim"
 alias du='du -h' df='df -h'
 alias cpu='ps aux | sort -k 3,3 | tail | tac'  
 alias mem='ps aux | sort -k 4,4 | tail | tac'  
-alias pacman='sudo pacman'
+alias pacman='sudo pacman-color'
 alias zz=ZZ=zZ=Zz="sudo pm-suspend"
 alias re="sudo reboot"
 alias stfu="sudo shutdown -h now"
@@ -55,7 +55,7 @@ alias fuckoff="killall -9"
 alias die="kill -9"
 alias addgsn="ssh-add ~/.ssh/ident/me-server@ganz-sicher.net"
 alias addgit="ssh-add ~/.ssh/ident/git@github.com"
-alias gcam="git commit -am" # for other git aliases, see git plugin
+alias gcam=gcma="git commit -am" # for other git aliases, see git plugin
 alias webserver="sudo /etc/rc.d/httpd start"
 # edit configs
 alias vimc="vim $HOME/.vimrc"

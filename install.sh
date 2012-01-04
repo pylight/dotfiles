@@ -26,7 +26,7 @@ deleteSyms()
    rm .createdLinks
    echo ""
    echo "Done. To remove the whole folder, run:"
-   echo "cd ; rm -R $curDir"
+   echo "cd ; rm -Rf $curDir"
    echo ""
 }
 

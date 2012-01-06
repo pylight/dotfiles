@@ -1,7 +1,8 @@
 # pylights .zshrc (https://github.com/pylight/dotfiles)
 #
-# @dep: oh-my-zsh (get it from https://github.com/robbyrussell/oh-my-zsh)
-#
+# @dep: - oh-my-zsh (get it from https://github.com/robbyrussell/oh-my-zsh)
+#       - egrep for dirsize function 
+#       - w3m for dictionary functions
 #
 
 # Path to your oh-my-zsh configuration.
@@ -30,6 +31,7 @@ export ZSH_THEME="robbyrussell"
 plugins=(extract git)
 
 source $ZSH/oh-my-zsh.sh
+source /etc/profile        # needed for autojump
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/opt/java/bin
@@ -55,7 +57,8 @@ alias fuckoff="killall -9"
 alias die="kill -9"
 alias addgsn="ssh-add ~/.ssh/ident/me-server@ganz-sicher.net"
 alias addgit="ssh-add ~/.ssh/ident/git@github.com"
-alias gcam=gcma="git commit -am" # for other git aliases, see git plugin
+alias gcam="git commit -am" # for other git aliases, see git plugin
+alias gcma="gcam"
 alias webserver="sudo /etc/rc.d/httpd start"
 # edit configs
 alias vimc="vim $HOME/.vimrc"
@@ -66,7 +69,6 @@ export EDITOR="/usr/bin/vim"
 
 # blogging helpers
 JEKYLLDIR="/srv/http/jekyll"
-alias bloggo="cd $JEKYLLDIR/"
 alias blogpost="python $JEKYLLDIR/_scripts/newpost.py"
 startjekyll()
 {
@@ -114,5 +116,20 @@ dirsize ()
    rm /tmp/list
 }
 
+
+# dictionaries
+function dict() {
+ w3m -dump "http://pocket.dict.cc?s=\"$*\"" | sed -r -e '/^([ ]{5,}.*)$/d' -e '1,2d' -e '/^$/d' -e '/^\[/d'
+}
+function leo() {
+ w3m -dump "http://pda.leo.org/?search=\"$*\"" | sed -n -e :a -e '1,9!{P;N;D;};N;ba' | sed -e '1,14d'
+}
+function leofr(){
+ w3m -dump "http://pda.leo.org/?lp=frde&search=\"$*\"" | sed -n -e :a -e '1,9!{P;N;D;};N;ba' | sed -e '1,14d'
+}
+
 # enable parent dir support (cd)
 zstyle ':compiletion:*' special-dirs true
+
+# use custom dircolors
+eval `dircolors $HOME/.dircolors`

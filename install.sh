@@ -43,6 +43,7 @@ then
    createSym conky conkyrc
    createSym urxvt Xdefaults
    createSym abcde abcde.conf
+   createSym dircolors dircolors
 
    # vim (optional)
    echo ""

@@ -14,6 +14,7 @@ The install.sh script will create symlinks in your Homedirectory for the followi
 * [conky](http://conky.sourceforge.net/) (~/.conkyrc)
 * [urxvt](https://wiki.archlinux.de/title/Urxvt) (~/.Xdefaults)
 * [abcde](http://andrews-corner.org/abcde.html) (~/.abcde.conf)
+* dircolors with [solarized](http://ethanschoonover.com/solarized) color scheme (~/.dircolors)
 * optional: [vim](http://www.vim.org/) (~/.vimrc and ~/.vim) - added as submodule from my [vim-repo](https://github.com/pylight/vimrc)
 * optional: [zsh](http://www.zsh.org/) (creates ~/.zshrc and ~/.oh-my-zsh symlink to the submodules folder)
 

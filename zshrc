@@ -49,7 +49,8 @@ alias du='du -h' df='df -h'
 alias cpu='ps aux | sort -k 3,3 | tail | tac'  
 alias mem='ps aux | sort -k 4,4 | tail | tac'  
 alias pacman='sudo pacman-color'
-alias zz=ZZ=zZ=Zz="sudo pm-suspend"
+alias zZ="sudo pm-suspend"
+alias Zz="zZ"
 alias re="sudo reboot"
 alias stfu="sudo shutdown -h now"
 alias stfu="sudo shutdown -h now"

@@ -4,9 +4,9 @@
 ! @desc: A simple config for urxvt.
 !
 ! @dep:  - urxvt (in Archlinux: extra/rxvt-unicode)
-!        - aur/urxvt-tabbedex for tabs with names
+!        - aur/urxvt-tabbedex for tabs w. names (or from ~/.dotfiles/urxvt-plugins)
 !        - xclip + clipboard-plugin from the urxvt-plugins folder (copy n paste support) 
-! 
+!        - aur/urxvt-fullscreen (or from ~/.dotfiles/urxvt-plugins)
 ! @author: pylight - for support visit http://github.com/pylight
 
 
@@ -22,6 +22,7 @@ URxvt*iconFile: /usr/share/icons/gnome/48x48/apps/utilities-terminal.png
 urxvt*cursorBlink: true
 urxvt*cursorUnderline: true
 urxvt*secondaryScroll: false
+urxvt*borderLess: false
 
 !------------------------
 ! solarized colors 
@@ -63,7 +64,7 @@ urxvt*secondaryScroll: false
 !------------------------------------------------
 ! perl script settings (must be in /usr/lib/urxvt/perl)
 !------------------------------------------------
-URxvt.perl-ext-common: default,matcher,tabbedex,clipboard
+URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,fullscreen
 
 ! clickable urls config
 URxvt.urlLauncher: firefox
@@ -78,6 +79,7 @@ URxvt.tabbed.tab-bg: 1
 !------------------------
 ! Shortcuts
 !------------------------
+urxvt*keysym.F11: perl:fullscreen:switch
 
 ! use usual copy and paste
 URxvt.iso14755: false

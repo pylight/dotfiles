@@ -47,8 +47,8 @@ then
 
    # vim (optional)
    echo ""
-   read -p "Also checkout vim config (submodule: https://github.com/pylight/vimrc)? [y/N] " prompt
-   if [[ $prompt =~ [yY](es)* ]]
+   read -p "Also checkout vim config (submodule: https://github.com/pylight/vimrc)? [y/N] " vimprompt
+   if [[ $vimprompt =~ [yY](es)* ]]
    then
       git submodule update --init vim  # checkout vim config
       echo ""
@@ -69,11 +69,25 @@ then
       echo $HOME/.vimrc >> .createdLinks
       
    fi
+
+   # urxvt extensions
+   echo ""
+   read -p "Copy urxvt extensions to /usr/lib/urxvt/perl/ (sudo needed)? [y/N] " urxvtprompt
+   if [[ $urxvtprompt =~ [yY](es)* ]]
+   then
+      if [ ! -d "/usr/lib/urxvt/perl/" ]
+      then
+         sudo mkdir -p /usr/lib/urxvt/perl/
+      fi
+      sudo cp urxvt-plugins/* /usr/lib/urxvt/perl/ 
+   fi
    
+   echo ""
+
    # zshrc & oh-my-zsh (optional)
    echo ""
-   read -p "Use custom .zshrc (and checkout oh-my-zsh)? [y/N] " prompt2
-   if [[ $prompt2 =~ [yY](es)* ]]
+   read -p "Use custom .zshrc (and checkout oh-my-zsh)? [y/N] " zshprompt
+   if [[ $zshprompt =~ [yY](es)* ]]
    then
       createSym zsh zshrc
       git submodule update --init oh-my-zsh

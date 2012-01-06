@@ -5,6 +5,7 @@ This repository contains configfiles for my Archlinux systems. Feel free to use 
 **Screenshot:**
 
 * [urxvt and vim + conky on the right](http://i.imgur.com/HQFxL.jpg)
+* [dircolors and zsh with git plugin](http://i.imgur.com/MiWsu.png)
 
 Installation
 -------------

@@ -77,12 +77,10 @@ then
    then
       if [ ! -d "/usr/lib/urxvt/perl/" ]
       then
-         sudo mkdir -p /usr/lib/urxvt/perl/
+         sudo mkdir -p "/usr/lib/urxvt/perl/"
       fi
-      sudo cp urxvt-plugins/* /usr/lib/urxvt/perl/ 
+      sudo cp urxvt-plugins/* "/usr/lib/urxvt/perl/" 
    fi
-   
-   echo ""
 
    # zshrc & oh-my-zsh (optional)
    echo ""

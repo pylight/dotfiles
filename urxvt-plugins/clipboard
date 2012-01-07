@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # urxvt clipboard plugin
-----------------------------
+#----------------------------
 # requires xclip
 # taken from http://goo.gl/bfA8g - thanks! :)
 

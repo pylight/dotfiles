@@ -79,6 +79,7 @@ URxvt.tabbed.tab-bg: 1
 !------------------------
 ! Shortcuts
 !------------------------
+urxvt*keysym.F11: perl:fullscreen:switch
 
 ! use usual copy and paste
 URxvt.iso14755: false

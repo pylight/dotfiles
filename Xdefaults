@@ -67,7 +67,8 @@ urxvt*borderLess: false
 URxvt.perl-ext-common: default,matcher,tabbedex,clipboard,fullscreen
 
 ! clickable urls config
-URxvt.urlLauncher: firefox
+! change this to your own browser
+URxvt.urlLauncher: aurora
 URxvt.matcher.button: 1
 
 ! tabbedex - appearance of tabs

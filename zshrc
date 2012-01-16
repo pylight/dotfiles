@@ -70,7 +70,7 @@ export EDITOR="/usr/bin/vim"
 
 # blogging helpers
 JEKYLLDIR="/srv/http/jekyll"
-alias blogpost="python $JEKYLLDIR/_scripts/newpost.py"
+alias blogpost="python $JEKYLLDIR/_scripts/newPost.py"
 startjekyll()
 {
    if [ `/usr/bin/whoami` = "root" ]; then
@@ -82,6 +82,20 @@ startjekyll()
    fi
 }
 alias jekyll="startjekyll"
+function blogimgup(){
+
+   idfile="me-server@ganz-sicher.net"
+
+   # test if ssh-add needs to be done
+   if [ ! "$(ssh-add -l | grep $idfile)" ]
+   then
+      addgsn
+   fi
+
+   # run uploadscript
+   $JEKYLLDIR/_scripts/uploadImg.sh $*
+}
+
 
 # make dir and go to dir
 function mkgo () {

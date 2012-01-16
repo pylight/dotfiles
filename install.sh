@@ -67,7 +67,7 @@ then
       ./install-vimrc.sh
       cd $curDir
       echo $HOME/.vimrc >> .createdLinks
-      
+      echo "[INFO] Done - optional: 'vim-spell-de' for german spell checking (using <F4>-Shortcut)"  
    fi
 
    # urxvt extensions

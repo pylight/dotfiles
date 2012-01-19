@@ -32,7 +32,6 @@ ${fs_bar 6, 200 /}
 /home ${alignr}${fs_free /home}
 ${fs_bar 6, 200 /home}
 
-
 ${font size=11:italic}${color slate grey}HDD I/O$hr${color }${font }
 ${diskiograph 16,0 F57900 FCAF3E}
 

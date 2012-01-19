@@ -43,7 +43,6 @@ ${top name 3}${alignr}${top cpu 3}%
 ${top name 4}${alignr}${top cpu 4}%
 ${top name 5}${alignr}${top cpu 5}%
 
-
 ${font size=11:italic}${color slate grey}Top RAM Tasks  $hr${color }${font }
 ${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}%${color }
 ${top_mem name 2}${alignr}${top_mem mem 2}%

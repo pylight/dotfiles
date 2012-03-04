@@ -48,7 +48,6 @@ alias svim="sudo vim"
 alias du='du -h' df='df -h'
 alias cpu='ps aux | sort -k 3,3 | tail | tac'  
 alias mem='ps aux | sort -k 4,4 | tail | tac'  
-alias pacman='sudo pacman-color'
 alias zZ="sudo pm-suspend"
 alias Zz="zZ"
 alias re="sudo reboot"
@@ -68,10 +67,22 @@ alias zshc="vim $HOME/.zshrc"
 # set vim as default editor
 export EDITOR="/usr/bin/vim"
 
+# if possible use pacman-color with sudo
+function pacman()
+{
+	if [ -e /usr/bin/pacman-color ] && [ -e /usr/bin/sudo ]
+	then
+		sudo pacman-color $*
+	else
+		pacman $*
+	fi
+}
+
+
 # blogging helpers
 JEKYLLDIR="/srv/http/jekyll"
 alias blogpost="python $JEKYLLDIR/_scripts/newPost.py"
-startjekyll()
+function startjekyll()
 {
    if [ `/usr/bin/whoami` = "root" ]; then
       echo "Please use jekyll with a normal user account!"
@@ -144,7 +155,7 @@ function leofr(){
 }
 
 # enable parent dir support (cd)
-zstyle ':compiletion:*' special-dirs true
+zstyle ':completion:*' special-dirs true
 
 # use custom dircolors
 eval `dircolors $HOME/.dircolors`

@@ -90,6 +90,7 @@ then
       createSym zsh zshrc
       git submodule update --init oh-my-zsh
       createSym oh-my-zsh oh-my-zsh
+      sudo pacman -S zsh
       echo ""
       echo "Done. If you want to make zsh your default shell, run:"
       echo "chsh -s /bin/zsh"

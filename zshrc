@@ -67,18 +67,6 @@ alias zshc="vim $HOME/.zshrc"
 # set vim as default editor
 export EDITOR="/usr/bin/vim"
 
-# if possible use pacman-color with sudo
-function pacman()
-{
-	if [ -e /usr/bin/pacman-color ] && [ -e /usr/bin/sudo ]
-	then
-		sudo pacman-color $*
-	else
-		pacman $*
-	fi
-}
-
-
 # blogging helpers
 JEKYLLDIR="/srv/http/jekyll"
 alias blogpost="python $JEKYLLDIR/_scripts/newPost.py"

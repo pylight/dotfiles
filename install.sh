@@ -87,6 +87,7 @@ then
    read -p "Use custom .zshrc (and checkout oh-my-zsh)? [y/N] " zshprompt
    if [[ $zshprompt =~ [yY](es)* ]]
    then
+      pacman -S zsh
       createSym zsh zshrc
       git submodule update --init oh-my-zsh
       createSym oh-my-zsh oh-my-zsh

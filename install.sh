@@ -72,14 +72,10 @@ then
 
    # urxvt extensions
    echo ""
-   read -p "Copy urxvt extensions to /usr/lib/urxvt/perl/ (sudo needed)? [y/N] " urxvtprompt
+   read -p "Install urxvt-tabbedex for named tab support? (installed yaourt needed)? [y/N] " urxvtprompt
    if [[ $urxvtprompt =~ [yY](es)* ]]
    then
-      if [ ! -d "/usr/lib/urxvt/perl/" ]
-      then
-         sudo mkdir -p "/usr/lib/urxvt/perl/"
-      fi
-      sudo cp urxvt-plugins/* "/usr/lib/urxvt/perl/" 
+      yaourt -S urxvt-tabbedex
    fi
 
    # zshrc & oh-my-zsh (optional)

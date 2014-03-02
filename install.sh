@@ -7,8 +7,8 @@ createSym()
    tool=$1
    file=$2
 
-   echo "=> Creating symlink for $tool at ~/.$file"
-   ln -s $curDir/$file $HOME/.$file
+   echo "=> Creating symlink for $tool at ~/$file"
+   ln -s $curDir/$file $HOME/$file
    
    if [ $? -eq 0 ]; then
       echo $HOME/.$file >> .createdLinks   # remember linked files
@@ -30,20 +30,14 @@ deleteSyms()
    echo ""
 }
 
-echo ""
-echo "============================="
-echo "== dotfiles install script =="
-echo "============================="
-echo ""
-
-if [ "$1" == "-doinstall" ] || [ "$1" == "--doinstall" ]
-then
+installation() 
+{
    # create symlinks
-   createSym tmux tmux.conf
-   createSym conky conkyrc
-   createSym urxvt Xdefaults
-   createSym abcde abcde.conf
-   createSym dircolors dircolors
+   echo "Creating config symlinks..."
+   createSym conky .conkyrc
+   createSym urxvt .Xdefaults
+   createSym dircolors .dircolors
+   createSym compton .config/compton.conf
 
    # vim (optional)
    echo ""
@@ -68,6 +62,10 @@ then
       cd $curDir
       echo $HOME/.vimrc >> .createdLinks
       echo "[INFO] Done - optional: 'vim-spell-de' for german spell checking (using <F4>-Shortcut)"  
+
+      # also make sure root will use the vim config
+      echo ""
+      echo "=> Creating symlink for vimrc at ~/.vimrc"
    fi
 
    # urxvt extensions
@@ -93,10 +91,10 @@ then
       echo "chsh -s /bin/zsh"
    fi
    echo ""
+}
 
-
-elif [ "$1" == "-uninstall" ] || [ "$1" == "--uninstall" ]
-then
+uninstallation() 
+{
    echo "ATTENTION: This will remove the following files:"
    echo "------------------------------------------------"
    cat .createdLinks
@@ -113,6 +111,24 @@ then
       rm -Rf $curDir/vim
       rm -Rf $curDir/oh-my-zsh
    fi
+}
+
+
+
+
+echo ""
+echo "============================="
+echo "== dotfiles install script =="
+echo "============================="
+echo ""
+
+if [ "$1" == "-doinstall" ] || [ "$1" == "--doinstall" ]
+then
+   installation
+
+elif [ "$1" == "-uninstall" ] || [ "$1" == "--uninstall" ]
+then
+   uninstallation
 else
    echo "Please read the README.md before you run this!"
    echo "Run ./install.sh -doinstall to create symlinks"

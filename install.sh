@@ -1,4 +1,5 @@
 #!/bin/bash
+# this script is used to set up all relevant configuration files in my linux system
 
 curDir=$(/bin/pwd)
 
@@ -44,7 +45,7 @@ installation()
    read -p "Also checkout vim config (submodule: https://github.com/pylight/vimrc)? [y/N] " vimprompt
    if [[ $vimprompt =~ [yY](es)* ]]
    then
-      git submodule update --init vim  # checkout vim config
+      git submodule update --init --remote vim  # checkout vim config
       echo ""
       createSym vim vim
       cd vim
@@ -53,7 +54,7 @@ installation()
       echo ""
       echo "Getting vim plugins (submodules in ~/.dotfiles/vim/bundle/)..."   
       echo ""
-      git submodule update --init      # checkout vim plugins
+      git submodule update --init --remote      # checkout vim plugins
      
       # add vimrc symlink
       echo ""
@@ -83,7 +84,7 @@ installation()
    then
       pacman -S zsh
       createSym zsh zshrc
-      git submodule update --init oh-my-zsh
+      git submodule update --init --remote oh-my-zsh
       createSym oh-my-zsh oh-my-zsh
       sudo pacman -S zsh
       echo ""
@@ -122,7 +123,7 @@ echo "== dotfiles install script =="
 echo "============================="
 echo ""
 
-if [ "$1" == "-doinstall" ] || [ "$1" == "--doinstall" ]
+if [ "$1" == "-doinstall" ] || [ "$1" == "--doinstall" ] || [ "$1" == "--do-install" ] || [ "$1" == "--install" ]
 then
    installation
 
